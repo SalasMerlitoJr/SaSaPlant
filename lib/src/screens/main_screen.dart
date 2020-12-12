@@ -159,7 +159,6 @@ class _MainScreenState extends State<MainScreen> {
       children: <Widget>[
         Icon(
           Icons.shopping_cart,
-          // size: 30.0,
           color: Theme.of(context).primaryColor,
         ),
         Positioned(

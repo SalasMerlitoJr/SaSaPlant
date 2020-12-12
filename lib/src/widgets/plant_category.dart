@@ -4,7 +4,6 @@ import 'plant_card.dart';
 // DAta
 import '../data/category_data.dart';
 
-// Model
 import '../models/category_model.dart';
 
 class PlantCategory extends StatelessWidget{

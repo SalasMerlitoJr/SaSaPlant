@@ -58,8 +58,6 @@ class _AddPlantItemState extends State<AddPlantItem> {
           body: SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
-              // width: MediaQuery.of(context).size.width,
-              // height: MediaQuery.of(context).size.height,
               child: Form(
                 key: _plantItemFormKey,
                 child: Column(
@@ -91,7 +89,6 @@ class _AddPlantItemState extends State<AddPlantItem> {
                           onTap: () {
                             onSubmit(model.addPlant, model.updatePlant);
                             if (model.isLoading) {
-                              // show loading progess indicator
                               showLoadingIndicator(
                                   context,
                                   widget.plant != null
@@ -121,7 +118,6 @@ class _AddPlantItemState extends State<AddPlantItem> {
       _plantItemFormKey.currentState.save();
 
       if (widget.plant != null) {
-        // I want to update the food item
         Map<String, dynamic> updatedPlantItem = {
           "title": title,
           "category": category,
@@ -132,9 +128,8 @@ class _AddPlantItemState extends State<AddPlantItem> {
 
         final bool response = await updatePlant(updatedPlantItem, widget.plant.id);
         if (response) {
-          Navigator.of(context).pop(); // to remove the alert Dialog
-          Navigator.of(context).pop(response); // to the previous page
-        } else if (!response) {
+          Navigator.of(context).pop(); 
+          Navigator.of(context).pop(response); 
           Navigator.of(context).pop();
           SnackBar snackBar = SnackBar(
             duration: Duration(seconds: 2),
@@ -147,7 +142,6 @@ class _AddPlantItemState extends State<AddPlantItem> {
           _scaffoldStateKey.currentState.showSnackBar(snackBar);
         }
       } else if (widget.plant == null) {
-        // I wnat to add new Item
         final Plant plant = Plant(
           name: title,
           category: category,
@@ -190,7 +184,6 @@ class _AddPlantItemState extends State<AddPlantItem> {
           ? TextInputType.number
           : TextInputType.text,
       validator: (String value) {
-        // String error
         if (value.isEmpty && hint == "Plant Title") {
           return "The title is required";
         }

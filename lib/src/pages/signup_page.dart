@@ -12,12 +12,12 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool _toggleVisibility = true;
-  // bool _toggleConfirmVisibility = true;
+
 
   String _email;
   String _username;
   String _password;
-  // String _confirmPassword;
+
 
   GlobalKey<FormState> _formKey = GlobalKey();
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
@@ -230,11 +230,10 @@ class _SignUpPageState extends State<SignUpPage> {
           .then((final response) {
         Navigator.of(context).pop();
         if (!response['hasError']) {
-          // Todo - Navigate to the homepage
+
           Navigator.of(context).pop();
           Navigator.of(context).pushNamed("/mainscreen");
         } else {
-          // todo - display the error message in the snackbar
           Navigator.of(context).pop();
           _scaffoldKey.currentState.showSnackBar(
             SnackBar(

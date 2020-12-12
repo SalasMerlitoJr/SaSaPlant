@@ -198,7 +198,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               Switch(
                                 value: turnOnLocation,
                                 onChanged: (bool value) {
-                                  // print("The value: $value");
                                   setState(() {
                                     turnOnLocation = value;
                                   });
@@ -242,7 +241,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               color: Colors.grey,
                             ),
                             Text("Currency", style: TextStyle(fontSize: 16.0)),
-                            // SizedBox(height: 10.0,),
                             Divider(
                               height: 30.0,
                               color: Colors.grey,

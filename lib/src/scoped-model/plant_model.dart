@@ -49,13 +49,13 @@ class PlantModel extends Model {
       _plants.add(plantWithID);
       _isLoading = false;
       notifyListeners();
-      // fetchFoods();
+ 
       return Future.value(true);
     } catch (e) {
       _isLoading = false;
       notifyListeners();
       return Future.value(false);
-      // print("Connection error: $e");
+
     }
   }
 
@@ -67,7 +67,7 @@ class PlantModel extends Model {
       final http.Response response = await http
           .get("https://sasaplant-69216-default-rtdb.firebaseio.com/plants.json");
 
-      // print("Fecthing data: ${response.body}");
+
       final Map<String, dynamic> fetchedData = json.decode(response.body);
       print(fetchedData);
 
@@ -102,10 +102,9 @@ class PlantModel extends Model {
     _isLoading = true;
     notifyListeners();
 
-    // get the food by id
     Plant thePlant = getPlantItemById(plantId);
 
-    // get the index of the food
+
     int plantIndex = _plants.indexOf(thePlant);
     try {
       await http.put(
@@ -142,7 +141,6 @@ class PlantModel extends Model {
       final http.Response response = await http.delete(
           "https://sasaplant-69216-default-rtdb.firebaseio.com/${plantId}.json");
 
-      // delete item from the list of food items
       _plants.removeWhere((Plant plant) => plant.id == plantId);
 
       _isLoading = false;

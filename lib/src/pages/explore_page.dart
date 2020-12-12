@@ -15,7 +15,7 @@ class FavoritePage extends StatefulWidget {
 
 class _FavoritePageState extends State<FavoritePage> {
 
-  // the scaffold global key
+
   GlobalKey<ScaffoldState> _explorePageScaffoldKey = GlobalKey();
 
   @override
@@ -32,8 +32,6 @@ class _FavoritePageState extends State<FavoritePage> {
       backgroundColor: Colors.white,
       body: ScopedModelDescendant<MainModel>(
         builder: (BuildContext sctx, Widget child, MainModel model) {
-          //model.fetchFoods(); // this will fetch and notifylisteners()
-          // List<Food> foods = model.foods;
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: RefreshIndicator(
@@ -63,7 +61,6 @@ class _FavoritePageState extends State<FavoritePage> {
                       }
                     },
                     onDoubleTap: (){
-                      // delete food item
                       showLoadingIndicator(context, "Deleting item...");
                       model.deletePlant(model.plants[index].id).then((bool response){
                         Navigator.of(context).pop();
@@ -85,23 +82,3 @@ class _FavoritePageState extends State<FavoritePage> {
   }
 }
 
-// Container(
-//         color: Colors.white,
-//         padding: EdgeInsets.symmetric(horizontal: 16.0),
-//         child: ScopedModelDescendant<MainModel>(
-//           builder: (BuildContext context, Widget child, MainModel model) {
-//             model.fetchFoods();
-//             List<Food> foods = model.foods;
-//             return Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: foods.map((Food food){
-//                 return FoodItemCard(
-//                   food.name,
-//                   food.description,
-//                   food.price.toString(),
-//                 );
-//               }).toList(),
-//             );
-//           },
-//         ),
-//       )

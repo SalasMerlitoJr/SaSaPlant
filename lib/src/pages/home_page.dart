@@ -8,23 +8,21 @@ import '../widgets/plant_category.dart';
 import '../widgets/search_file.dart';
 
 
-// Model
+
 import '../models/plant_model.dart';
 
 class HomePage extends StatefulWidget {
-  // final FoodModel foodModel;
 
-  // HomePage(this.foodModel);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  // List<Food> _foods = foods;
+
 
   @override
   void initState() {
-    // widget.foodModel.fetchFoods();
+
     super.initState();
   }
 

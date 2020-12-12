@@ -59,7 +59,7 @@ class PlantDetailsPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16.0, color: Colors.black),
                   ),
                   Text(
-                    "\u{20b5} ${plant.price}",
+                    "\u{20B1} ${plant.price}",
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Theme.of(context).primaryColor,
